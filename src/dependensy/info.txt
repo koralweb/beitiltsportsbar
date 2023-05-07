@@ -12,4 +12,5 @@ git remote add origin https://github.com/koralweb/beitiltsportsbar.git
   -- .gitignore
   -- android/app/src/main/java/com/beitiltsportsbar/MainActivity.java
   
+git branch -M development
 git pull origin development
