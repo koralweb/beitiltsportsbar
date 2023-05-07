@@ -32,3 +32,4 @@ tsconfig.json
 node_modules
 _bundle/config
 _node-version
+App.tsx
