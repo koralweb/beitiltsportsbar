@@ -1,5 +1,7 @@
 npx react-native init BeitiltSportsBar
 cd BeitiltSportsBar //Переходим в созданную папку проекта
+// Заходишь в почту и принимаешь приглашение в git
+
 npx react-native run-android //Запускаем, проверяем работоспособность
 
 // Останавливаем все процессы (CTRL+C в терминале), выключаем эмулятор 
@@ -14,3 +16,5 @@ git remote add origin https://github.com/koralweb/beitiltsportsbar.git
   
 git branch -M development
 git pull origin development
+
+npx react-native run-android //Запускаем, проверяем работоспособность
