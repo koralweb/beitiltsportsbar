@@ -7,8 +7,10 @@ function HomeScreen({navigation}) {
   return (
     <View style={styles.globalCont}>
       <Header navigation={navigation} />
-      <View style={styles.img}><Image source={require('../assets/icon.png')} style={styles.icon} /></View>  
-      
+      <View style={styles.img}>
+        <Image source={require('../assets/icon.png')} style={styles.icon} />
+      </View>
+
       <View style={styles.cont}>
         <TouchableOpacity onPress={() => navigation.push('Shop')}>
           <Text style={styles.text}>Магазин</Text>
@@ -34,8 +36,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#F94332',
-   
-  
   },
   icon: {
     width: 599 / 3,
@@ -45,11 +45,10 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: "white",
+    color: 'white',
     fontWeight: 800,
     fontSize: 35,
-    fontFamily: 'Montserrat',
-    fontStyle: "normal",
+    fontStyle: 'normal',
   },
   img: {
     backgroundColor: '#F94332',

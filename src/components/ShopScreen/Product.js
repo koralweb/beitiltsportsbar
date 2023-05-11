@@ -34,18 +34,17 @@ const Product = ({pr}) => {
 
 const styles = StyleSheet.create({
   item: {
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     marginTop: 30,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderWidth: 1,
-    borderColor: "black",
+    borderColor: 'black',
     marginLeft: 10,
     marginRight: 10,
   },
   title: {
-    color: "#F94332",
-    fontFamily: 'Montserrat',
+    color: '#F94332',
     fontWeight: 800,
     fontSize: 35,
   },
@@ -53,35 +52,27 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
   },
-  desc:{
+  desc: {
     fontSize: 15,
     fontWeight: 500,
-    fontFamily: 'Montserrat',
-    color: "#000000",
+    color: '#000000',
     padding: 10,
   },
   counterAndBtn: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignSelf: 'flex-end',
-    
   },
   addBtn: {
     padding: 10,
     borderWidth: 1,
-    
-    
-
-   
   },
   addedBtn: {
     padding: 5,
     borderWidth: 1,
     width: 50,
     alignSelf: 'flex-end',
-    
   },
-
 });
 
 export default observer(Product);
