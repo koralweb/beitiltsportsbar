@@ -29,6 +29,7 @@ const ShopScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
   ...globalStyles,
+ 
 });
 
 export default ShopScreen;
