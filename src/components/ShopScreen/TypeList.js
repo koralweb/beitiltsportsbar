@@ -14,7 +14,7 @@ const TypeList = () => {
   const renderTypeList = () => {
     return filterProductTypes().map(el => (
       <TouchableOpacity style={styles.item} key={el}>
-        <Text>{el}</Text>
+        <Text style={styles.text}>{el}</Text>
       </TouchableOpacity>
     ));
   };
@@ -30,6 +30,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
+  text: {
+  color: '#F94332',
+  fontWeight: 500,
+  paddingLeft: 10,
+  paddingRight: 10,
+}
+
 });
 
 export default TypeList;

@@ -17,7 +17,10 @@ const Header = ({navigation}) => {
           size={25}
         />
       </TouchableOpacity>
+      <View>
       <Image source={require('../assets/top_icon.png')} style={styles.icon} />
+      <Text style={styles.text}>Sports pub</Text>
+      </View>
       {showMenu && <Menu navigation={navigation} />}
     </View>
   );
@@ -25,7 +28,7 @@ const Header = ({navigation}) => {
 
 const styles = StyleSheet.create({
   cont: {
-    backgroundColor: 'silver',
+    backgroundColor: '#F94332',
     paddingTop: 35,
     paddingBottom: 10,
     paddingHorizontal: 10,
@@ -43,6 +46,11 @@ const styles = StyleSheet.create({
     width: 224 / 5,
     height: 199 / 5,
   },
+  text:{
+    fontSize: 15,
+    fontWeight: 800,
+  },
+  
 });
-// 123
+
 export default Header;

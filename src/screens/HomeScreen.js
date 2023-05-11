@@ -7,19 +7,20 @@ function HomeScreen({navigation}) {
   return (
     <View style={styles.globalCont}>
       <Header navigation={navigation} />
-      <Image source={require('../assets/icon.png')} style={styles.icon} />
+      <View style={styles.img}><Image source={require('../assets/icon.png')} style={styles.icon} /></View>  
+      
       <View style={styles.cont}>
         <TouchableOpacity onPress={() => navigation.push('Shop')}>
-          <Text>Магазин</Text>
+          <Text style={styles.text}>Магазин</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.push('Booking')}>
-          <Text>Бронь столика</Text>
+          <Text style={styles.text}>Бронь столика</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.push('Show')}>
-          <Text>Трансляции</Text>
+          <Text style={styles.text}>Трансляции</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.push('Contacts')}>
-          <Text>Контакты</Text>
+          <Text style={styles.text}>Контакты</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -32,10 +33,27 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#F94332',
+   
+  
   },
   icon: {
-    width: 599 / 4,
-    height: 506 / 4,
+    width: 599 / 3,
+    height: 506 / 3,
+    marginLeft: 100,
+    backgroundColor: '#F94332',
+  },
+
+  text: {
+    color: "white",
+    fontWeight: 800,
+    fontSize: 35,
+    fontFamily: 'Montserrat',
+    fontStyle: "normal",
+  },
+  img: {
+    backgroundColor: '#F94332',
+    paddingTop: 75,
   },
 });
 

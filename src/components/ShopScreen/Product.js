@@ -13,9 +13,9 @@ const Product = ({pr}) => {
 
   return (
     <View style={styles.item}>
-      <Text>{pr.title}</Text>
+      <Text style={styles.title}>{pr.title}</Text>
       <Image source={pr.image} style={styles.productImage} />
-      <Text>{pr.desc}</Text>
+      <Text style={styles.desc}>{pr.desc}</Text>
       {pr.added ? (
         <View style={styles.addedBtn}>
           <Text>V</Text>
@@ -24,7 +24,7 @@ const Product = ({pr}) => {
         <View style={styles.counterAndBtn}>
           <Counter cnt={cnt} setCnt={setCnt} />
           <TouchableOpacity style={styles.addBtn} onPress={addProduct}>
-            <Text>Add</Text>
+            <Text style={styles.add}>Add</Text>
           </TouchableOpacity>
         </View>
       )}
@@ -33,24 +33,55 @@ const Product = ({pr}) => {
 };
 
 const styles = StyleSheet.create({
+  item: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 30,
+    backgroundColor: "white",
+    borderWidth: 1,
+    borderColor: "black",
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  title: {
+    color: "#F94332",
+    fontFamily: 'Montserrat',
+    fontWeight: 800,
+    fontSize: 35,
+  },
   productImage: {
     width: 200,
     height: 200,
   },
+  desc:{
+    fontSize: 15,
+    fontWeight: 500,
+    fontFamily: 'Montserrat',
+    color: "#000000",
+    padding: 10,
+  },
   counterAndBtn: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
+    alignSelf: 'flex-end',
+    
   },
   addBtn: {
-    padding: 5,
+    padding: 10,
     borderWidth: 1,
+    
+    
+
+   
   },
   addedBtn: {
     padding: 5,
     borderWidth: 1,
     width: 50,
     alignSelf: 'flex-end',
+    
   },
+
 });
 
 export default observer(Product);
