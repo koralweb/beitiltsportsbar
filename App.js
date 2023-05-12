@@ -14,7 +14,7 @@ import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
 import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
 import {faClose} from '@fortawesome/free-solid-svg-icons/faClose';
 
-library.add(faHome, faBars, faClose);
+library.add(faHome, faBars, faClose,);
 
 const Stack = createNativeStackNavigator();
 

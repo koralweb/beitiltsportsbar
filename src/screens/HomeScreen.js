@@ -13,16 +13,16 @@ function HomeScreen({navigation}) {
 
       <View style={styles.cont}>
         <TouchableOpacity onPress={() => navigation.push('Shop')}>
-          <Text style={styles.text}>Магазин</Text>
+          <Text style={styles.text}>Comercio</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.push('Booking')}>
-          <Text style={styles.text}>Бронь столика</Text>
+          <Text style={styles.text}>Reserva de mesa</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.push('Show')}>
-          <Text style={styles.text}>Трансляции</Text>
+          <Text style={styles.text}>Transmisiones</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.push('Contacts')}>
-          <Text style={styles.text}>Контакты</Text>
+          <Text style={styles.text}>Contactos</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 800,
     fontSize: 35,
-    fontStyle: 'normal',
+  
   },
   img: {
     backgroundColor: '#F94332',

@@ -24,7 +24,7 @@ const TypeList = () => {
 
 const styles = StyleSheet.create({
   item: {
-    borderWidth: 1,
+    
   },
   typeList: {
     flexDirection: 'row',
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
   fontWeight: 500,
   paddingLeft: 10,
   paddingRight: 10,
+  fontSize: 15,
 }
 
 });

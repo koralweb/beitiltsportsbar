@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
   cont: {
     flexDirection: 'row',
     borderWidth: 2,
+    marginRight: 20,
      
   },
   operator: {
