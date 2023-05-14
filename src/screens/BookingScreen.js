@@ -4,27 +4,38 @@ import {
   View,
   TextInput,
   TouchableOpacity,
-  Image
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from '../components/Header';
 import globalStyles from '../globalStyles';
-import { height } from '@fortawesome/free-solid-svg-icons/faBars';
 
-const BookingScreen = ({navigation}) => {
+const BookingScreen = ({navigation, route}) => {
   const [persons, setPersons] = useState('');
   const [outside, setOutside] = useState('');
   const [phone, setPhone] = useState('');
   const [date, setDate] = useState('');
+  const [fromCart, setFromCart] = useState(false);
+
+  useEffect(() => {
+    if (route.params)
+      route.params.hasOwnProperty('cart')
+        ? setFromCart(route.params.cart)
+        : null;
+  }, []);
+
   return (
     <View style={styles.globalCont}>
       <Header navigation={navigation} />
 
       <View style={styles.cont}>
-        <Text style={styles.title}>Reserva de mesa</Text>
+        {fromCart ? (
+          <Text style={styles.title}>Despacho de entrega</Text>
+        ) : (
+          <Text style={styles.title}>Reserva de mesa</Text>
+        )}
         <Text style={styles.desc}>
-        Quieres poner la mesa rápidamente? Enviar una solicitud de reserva en línea
-          mesa en nuestro restaurante. ¡Y definitivamente te llamaremos!
+          Quieres poner la mesa rápidamente? Enviar una solicitud de reserva en
+          línea mesa en nuestro restaurante. ¡Y definitivamente te llamaremos!
         </Text>
         <Text style={styles.item}>Número de personas</Text>
         <TextInput
@@ -32,14 +43,19 @@ const BookingScreen = ({navigation}) => {
           onChangeText={setPersons}
           value={persons}
           placeholder="Número de personas"
+          keyboardType="numeric"
         />
-        <Text style={styles.item}>Ubicación de la mesa</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={setOutside}
-          value={outside}
-          placeholder="Interior o exterior?"
-        />
+        {!fromCart && (
+          <>
+            <Text style={styles.item}>Ubicación de la mesa</Text>
+            <TextInput
+              style={styles.input}
+              onChangeText={setOutside}
+              value={outside}
+              placeholder="Interior o exterior?"
+            />
+          </>
+        )}
         <Text style={styles.item}>Número de teléfono</Text>
         <TextInput
           style={styles.input}
@@ -54,13 +70,12 @@ const BookingScreen = ({navigation}) => {
           value={date}
           placeholder="fecha y hora"
         />
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={() => navigation.push('Checkout')}>
           <Text style={styles.button}>Libro</Text>
         </TouchableOpacity>
       </View>
-
-      <Image source={require('../assets/logobooking.png')} style={styles.logo} />
-
     </View>
   );
 };
@@ -71,7 +86,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  title:{
+  title: {
     fontSize: 25,
     fontWeight: 900,
     color: '#F84433',
@@ -84,12 +99,11 @@ const styles = StyleSheet.create({
     padding: 15,
   },
 
-  item:{
-    alignSelf: "flex-start",
+  item: {
+    alignSelf: 'flex-start',
     fontSize: 15,
     fontWeight: 900,
     marginLeft: 20,
-
   },
 
   input: {
@@ -98,13 +112,11 @@ const styles = StyleSheet.create({
     height: 40,
     marginBottom: 10,
     borderRadius: 10,
-    borderColor: "#909090",
-    color: "#909090",
+    borderColor: '#909090',
+    color: '#909090',
     fontSize: 15,
     paddingLeft: 15,
     marginTop: 5,
-   
-
   },
   btn: {
     padding: 5,
@@ -116,23 +128,19 @@ const styles = StyleSheet.create({
     width: 350,
     height: 40,
     borderRadius: 10,
-    backgroundColor: "#1E6AB1",
+    backgroundColor: '#1E6AB1',
   },
   button: {
-    color: "white",
+    color: 'white',
     fontSize: 20,
     fontWeight: 900,
-    alignSelf: "center",
-
-
+    alignSelf: 'center',
   },
 
   logo: {
     width: 100,
     height: 100,
-    alignSelf: "center",
-
-
+    alignSelf: 'center',
   },
 });
 

@@ -10,10 +10,13 @@ const filterProductTypes = () => {
   return arr;
 };
 
-const TypeList = () => {
+const TypeList = ({setType}) => {
   const renderTypeList = () => {
     return filterProductTypes().map(el => (
-      <TouchableOpacity style={styles.item} key={el}>
+      <TouchableOpacity
+        style={styles.item}
+        key={el}
+        onPress={() => setType(el)}>
         <Text style={styles.text}>{el}</Text>
       </TouchableOpacity>
     ));
@@ -23,21 +26,20 @@ const TypeList = () => {
 };
 
 const styles = StyleSheet.create({
-  item: {
-    
-  },
+  item: {},
   typeList: {
     flexDirection: 'row',
     justifyContent: 'space-around',
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   text: {
-  color: '#F94332',
-  fontWeight: 500,
-  paddingLeft: 10,
-  paddingRight: 10,
-  fontSize: 15,
-}
-
+    color: '#F94332',
+    fontWeight: 500,
+    paddingLeft: 10,
+    paddingRight: 10,
+    fontSize: 15,
+  },
 });
 
 export default TypeList;

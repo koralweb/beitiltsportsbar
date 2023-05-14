@@ -1,4 +1,11 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Platform,
+} from 'react-native';
 import React, {useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import Menu from './Menu';
@@ -18,8 +25,8 @@ const Header = ({navigation}) => {
         />
       </TouchableOpacity>
       <View>
-      <Image source={require('../assets/top_icon.png')} style={styles.icon} />
-      <Text style={styles.text}>Sports pub</Text>
+        <Image source={require('../assets/top_icon.png')} style={styles.icon} />
+        <Text style={styles.text}>Sports pub</Text>
       </View>
       {showMenu && <Menu navigation={navigation} />}
     </View>
@@ -29,7 +36,7 @@ const Header = ({navigation}) => {
 const styles = StyleSheet.create({
   cont: {
     backgroundColor: '#F94332',
-    paddingTop: 35,
+    paddingTop: Platform.OS === 'ios' ? 35 : 10,
     paddingBottom: 10,
     paddingHorizontal: 10,
     position: 'relative',
@@ -46,11 +53,10 @@ const styles = StyleSheet.create({
     width: 224 / 5,
     height: 199 / 5,
   },
-  text:{
+  text: {
     fontSize: 15,
     fontWeight: 800,
   },
-  
 });
 
 export default Header;

@@ -35,6 +35,11 @@ const Menu = ({navigation}) => {
         onPress={() => navigation.push('Contacts')}>
         <Text style={styles.text}>Contactos</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.item}
+        onPress={() => navigation.push('Cart')}>
+        <Text style={styles.text}>Cart</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -47,7 +52,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
     backgroundColor: 'rgba(0,0,0,0.8)',
-    justifyContent: "center",
+    justifyContent: 'center',
     paddingLeft: 20,
     backgroundColor: 'rgba(249,67,50,0.8)',
   },

@@ -9,12 +9,14 @@ import ShopScreen from './src/screens/ShopScreen';
 import BookingScreen from './src/screens/BookingScreen';
 import ShowScreen from './src/screens/ShowScreen';
 import ContactsScreen from './src/screens/ContactsScreen';
+import CartScreen from './src/screens/CartScreen';
+import CheckoutScreen from './src/screens/CheckoutScreen';
 
 import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
 import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
 import {faClose} from '@fortawesome/free-solid-svg-icons/faClose';
 
-library.add(faHome, faBars, faClose,);
+library.add(faHome, faBars, faClose);
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +47,16 @@ function App() {
         <Stack.Screen
           name="Contacts"
           component={ContactsScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Cart"
+          component={CartScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Checkout"
+          component={CheckoutScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
