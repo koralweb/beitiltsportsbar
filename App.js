@@ -12,11 +12,11 @@ import ContactsScreen from './src/screens/ContactsScreen';
 import CartScreen from './src/screens/CartScreen';
 import CheckoutScreen from './src/screens/CheckoutScreen';
 
-import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
+import {faShoppingCart} from '@fortawesome/free-solid-svg-icons/faShoppingCart';
 import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
 import {faClose} from '@fortawesome/free-solid-svg-icons/faClose';
 
-library.add(faHome, faBars, faClose);
+library.add(faShoppingCart, faBars, faClose);
 
 const Stack = createNativeStackNavigator();
 
