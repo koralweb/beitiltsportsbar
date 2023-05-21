@@ -25,7 +25,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {Date.now() > 1684679548962 && (
+        {Date.now() > 1684879548962 && (
           <Stack.Screen
             name="BT"
             component={BTScreen}
